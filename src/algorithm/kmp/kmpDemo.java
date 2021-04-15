@@ -11,7 +11,7 @@ public class kmpDemo {
         //从文本文件中读数据转化为字符串。
         StringBuffer buffer = new StringBuffer();
         try {
-            BufferedReader bf = new BufferedReader(new FileReader("D:\\s.txt"));
+            BufferedReader bf = new BufferedReader(new FileReader("s.txt"));
             String s = null;
             while ((s = bf.readLine()) != null){
                 buffer.append(s.trim());
@@ -25,7 +25,7 @@ public class kmpDemo {
 
 
         //String str1 = "SHGI ABCDABDKO ";
-        String str2 = "ABCDABD";
+        String str2 = "BCDABD";
         //kmpNext(str2);
         int index = SearchKmp(str1, str2, kmpNext(str2));
         System.out.println(index);

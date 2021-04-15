@@ -15,7 +15,7 @@ public class ConcurrentSearch {
     public static void main(String[] args) {
 
         try {
-           int index = pSearch(-8);
+           int index = pSearch(84);
            System.out.println(index);
         }catch (InterruptedException e){
 

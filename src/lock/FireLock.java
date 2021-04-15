@@ -31,7 +31,5 @@ public class FireLock implements Runnable {
             e.printStackTrace();
         }
 
-
-
     }
 }
