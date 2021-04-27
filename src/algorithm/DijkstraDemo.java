@@ -2,6 +2,9 @@ package algorithm;
 
 import java.util.Arrays;
 
+/**
+ * 时间复杂度 O(n^2)
+ */
 public class DijkstraDemo {
 
     public static void main(String[] args) {
@@ -38,6 +41,10 @@ public class DijkstraDemo {
         if (v < 0 || v > n) {
             return;
         }
+
+        /**
+         * 初始化 dist[] prev[] 数组
+         */
         boolean[] s = new boolean[n + 1];
         for (int i = 0; i <= n; i++) {
             dist[i] = a[v][i];
@@ -55,10 +62,16 @@ public class DijkstraDemo {
         System.out.println("dist[] init: " + Arrays.toString(dist));
         System.out.println("prev[] init: " + Arrays.toString(prev));
 
+
         for (int i = 0; i <= n; i++) {
             float temp = Float.MAX_VALUE;
             int u = v;
 
+            /**
+             * 1.探索可以联通的节点
+             * 2探索可以联通节点 之间的最短距路径节点u
+             * 3.s[u] 设置以访问
+             */
             for (int j = 0; j <= n; j++) {
                 if (!s[j] && dist[j] < temp) {
                     u = j;
@@ -67,6 +80,9 @@ public class DijkstraDemo {
             }
             s[u] = true;
 
+            /**
+             *计算 节点u 到 节点j 之间的最短路径并更新 dist[] prev[]
+             */
             for (int j = 0; j <= n; j++) {
                 if (!s[j] && a[u][j] < Float.MAX_VALUE) {
                     float newDist = dist[u] + a[u][j];
