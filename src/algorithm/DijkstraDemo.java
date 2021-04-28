@@ -70,7 +70,7 @@ public class DijkstraDemo {
             /**
              * 1.探索可以联通的节点
              * 2探索可以联通节点 之间的最短距路径节点u
-             * 3.s[u] 设置以访问
+             * 3.s[u]=true 将节点 u 加入到 s 集合
              */
             for (int j = 0; j <= n; j++) {
                 if (!s[j] && dist[j] < temp) {
